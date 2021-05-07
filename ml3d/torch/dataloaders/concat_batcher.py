@@ -419,8 +419,10 @@ class PointPillarsBatch:
         self.bboxes = []
         self.bbox_objs = []
         self.calib = []
+        self.attr = []
 
         for batch in batches:
+            self.attr.append(batch['attr'])
             data = batch['data']
             attr = batch['attr']
             if 'test' not in attr['split'] and len(
